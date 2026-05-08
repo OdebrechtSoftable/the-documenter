@@ -33,11 +33,11 @@ Load only the reference files needed for task:
 - `references/backend-entrypoint.md` for backend/API/service repos.
 - `references/agents-entrypoint.md` when creating or refreshing `AGENTS.md`.
 - `references/parallel-documentation-workflow.md` for large repos or full doc-set creation where parallel drafting can help.
-- `references/README.md.template` for repo README.
-- `references/deployment-README.md.template` for deployment docs.
-- `references/architecture-and-walkthrough.md.template` for architecture/runtime docs.
-- `references/DESIGN.md.template` for UI/product design docs.
-- `references/testing.md.template` for test docs.
+- `references/templates/README.md.template` for repo README.
+- `references/templates/deployment-README.md.template` for deployment docs.
+- `references/templates/architecture-and-walkthrough.md.template` for architecture/runtime docs.
+- `references/templates/DESIGN.md.template` for UI/product design docs.
+- `references/templates/testing.md.template` for test docs.
 - `references/TODO.md` for documentation backlog/checklist.
 - `references/samples/*` when user asks for examples or when template quality needs calibration. Samples cover repo README, docs hub, commercial overview, core concepts, deployment, architecture, design, testing, API docs, module docs, AGENTS, CLAUDE, TODO, frontend examples, and backend examples.
 
@@ -89,7 +89,7 @@ Create or refresh docs using repo evidence and existing repo conventions.
 
 ### Repo `README.md`
 
-Use `references/README.md.template`.
+Use `references/templates/README.md.template`.
 
 README should include:
 
@@ -182,7 +182,7 @@ Rules:
 
 ### `docs/deployment.md`
 
-Required when repo has deployment flow. Use `references/deployment-README.md.template`.
+Required when repo has deployment flow. Use `references/templates/deployment-README.md.template`.
 
 Put deployment details here, not in repo `README.md`.
 
@@ -190,19 +190,19 @@ Repo `README.md` may link to this file, usually from Documentation, but must not
 
 ### `docs/architecture-and-walkthrough.md`
 
-Use `references/architecture-and-walkthrough.md.template`.
+Use `references/templates/architecture-and-walkthrough.md.template`.
 
 Document runtime flow, module boundaries, key files, request/data lifecycle, integrations, and repo-supported diagrams.
 
 ### `docs/DESIGN.md`
 
-Use `references/DESIGN.md.template` for frontend/product UI repos.
+Use `references/templates/DESIGN.md.template` for frontend/product UI repos.
 
 Document design system, layout patterns, UX rules, accessibility, responsive behavior, and user-facing terminology.
 
 ### `docs/testing.md`
 
-Use `references/testing.md.template`.
+Use `references/templates/testing.md.template`.
 
 Document repo-supported test commands, test layers, fixture strategy, manual smoke checks, and known gaps.
 

@@ -24,11 +24,12 @@ It is designed for React, .NET, frontend, backend, API, service, and mixed repos
 the-documenter/
 |-- SKILL.md
 `-- references/
-    |-- README.md.template
-    |-- deployment-README.md.template
-    |-- architecture-and-walkthrough.md.template
-    |-- DESIGN.md.template
-    |-- testing.md.template
+    |-- templates/
+    |   |-- README.md.template
+    |   |-- deployment-README.md.template
+    |   |-- architecture-and-walkthrough.md.template
+    |   |-- DESIGN.md.template
+    |   `-- testing.md.template
     |-- frontend-entrypoint.md
     |-- backend-entrypoint.md
     |-- agents-entrypoint.md
