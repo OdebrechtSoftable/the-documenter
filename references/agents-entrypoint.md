@@ -4,6 +4,63 @@ Use with The Documenter when creating, refreshing, or auditing `AGENTS.md`.
 
 `AGENTS.md` is not a second README. It is the operational contract for coding agents working in the repo.
 
+## Required Opening Block
+
+Every `AGENTS.md` file in every repo being documented must start with this block before any repo-specific title or instructions:
+
+```markdown
+1. Think Before Coding
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+Before implementing:
+
+State your assumptions explicitly. If uncertain, ask.
+If multiple interpretations exist, present them - don't pick silently.
+If a simpler approach exists, say so. Push back when warranted.
+If something is unclear, stop. Name what's confusing. Ask.
+2. Simplicity First
+Minimum code that solves the problem. Nothing speculative.
+
+No features beyond what was asked.
+No abstractions for single-use code.
+No "flexibility" or "configurability" that wasn't requested.
+No error handling for impossible scenarios.
+If you write 200 lines and it could be 50, rewrite it.
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+3. Surgical Changes
+Touch only what you must. Clean up only your own mess.
+
+When editing existing code:
+
+Don't "improve" adjacent code, comments, or formatting.
+Don't refactor things that aren't broken.
+Match existing style, even if you'd do it differently.
+If you notice unrelated dead code, mention it - don't delete it.
+When your changes create orphans:
+
+Remove imports/variables/functions that YOUR changes made unused.
+Don't remove pre-existing dead code unless asked.
+The test: Every changed line should trace directly to the user's request.
+
+4. Goal-Driven Execution
+Define success criteria. Loop until verified.
+
+Transform tasks into verifiable goals:
+
+"Add validation" → "Write tests for invalid inputs, then make them pass"
+"Fix the bug" → "Write a test that reproduces it, then make it pass"
+"Refactor X" → "Ensure tests pass before and after"
+For multi-step tasks, state a brief plan:
+
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+```
+
+Repo-specific content must come after this block.
+
 ## Identity
 
 Write `AGENTS.md` for a careful engineering agent:
@@ -161,10 +218,11 @@ When used with `backend-entrypoint.md`, include backend-specific agent rules:
 
 Before shipping `AGENTS.md`:
 
-1. Every command appears in repo evidence.
-2. Every cited path exists.
-3. `AGENTS.md` and repo README agree on shared facts.
-4. `CLAUDE.md` is pointer-only.
-5. Rules are specific enough to guide edits.
-6. Rules do not ask agents to refactor or expand scope by default.
-7. No secrets or secret values are included.
+1. The required opening block is the first content in the file.
+2. Every command appears in repo evidence.
+3. Every cited path exists.
+4. `AGENTS.md` and repo README agree on shared facts.
+5. `CLAUDE.md` is pointer-only.
+6. Rules are specific enough to guide edits.
+7. Rules do not ask agents to refactor or expand scope by default.
+8. No secrets or secret values are included.

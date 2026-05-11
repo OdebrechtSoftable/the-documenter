@@ -212,6 +212,8 @@ Authoritative operational guide for agents.
 
 Use `references/agents-entrypoint.md`.
 
+Every repo `AGENTS.md` must start with the required opening block from `references/agents-entrypoint.md` before any repo-specific title or instructions.
+
 Include:
 
 1. Build + Run
