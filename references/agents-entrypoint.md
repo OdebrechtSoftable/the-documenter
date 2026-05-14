@@ -106,6 +106,21 @@ Include these sections when repo evidence supports them:
 
 Keep sections terse and operational. Use tables for commands and file maps.
 
+## Code Format Style Pointer
+
+`AGENTS.md` is not the source of truth for code formatting and style. `docs/code-format-patterns-style.md` is.
+
+The Formatting Rules, Code Style Rules, and File Placement sections must:
+
+1. Summarize the highest-leverage rules in under ~15 lines each (package manager, lint/format/typecheck commands, the 3-5 most important conventions).
+2. End with this pointer line:
+
+```markdown
+See [docs/code-format-patterns-style.md](./docs/code-format-patterns-style.md) for the full code format, patterns, and style reference.
+```
+
+Do not duplicate the full style ruleset, anti-pattern tables, or extended code examples in `AGENTS.md`. If a contributor needs more than the summary, they follow the pointer.
+
 ## Before Editing Section
 
 Include a section based on these rules:
@@ -225,4 +240,5 @@ Before shipping `AGENTS.md`:
 5. `CLAUDE.md` is pointer-only.
 6. Rules are specific enough to guide edits.
 7. Rules do not ask agents to refactor or expand scope by default.
-8. No secrets or secret values are included.
+8. Formatting Rules, Code Style Rules, and File Placement sections each end with a pointer to `docs/code-format-patterns-style.md`; full style ruleset is not duplicated in `AGENTS.md`.
+9. No secrets or secret values are included.

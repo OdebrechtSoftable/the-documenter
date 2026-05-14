@@ -25,11 +25,11 @@ the-documenter/
 |-- SKILL.md
 `-- references/
     |-- templates/
-    |   |-- README.md.template
-    |   |-- deployment-README.md.template
-    |   |-- architecture-and-walkthrough.md.template
-    |   |-- DESIGN.md.template
-    |   `-- testing.md.template
+    |   |-- README.md
+    |   |-- deployment-README.md
+    |   |-- architecture-and-walkthrough.md
+    |   |-- DESIGN.md
+    |   `-- testing.md
     |-- frontend-entrypoint.md
     |-- backend-entrypoint.md
     |-- agents-entrypoint.md
@@ -73,7 +73,7 @@ Use The Documenter to refresh README, AGENTS, core concepts, deployment, and tes
 ```
 
 ```text
-Use The Documenter parallel workflow for this large repo.
+Use The Documenter parallel workflow for this doc set.
 ```
 
 ## Core Rules
@@ -88,10 +88,12 @@ Use The Documenter parallel workflow for this large repo.
 
 ## Parallel Workflow
 
-For large repos, The Documenter uses a source-first workflow:
+The Documenter uses a source-first workflow:
 
 ```text
 repo evidence -> module docs -> core concepts -> shared facts -> parallel derived docs -> serial merge/verify
 ```
 
 This keeps faster parallel doc writers grounded in module docs, core concepts, and a shared facts packet instead of raw partial context.
+
+The workflow loops through verification and a dedicated review-agent pass until all applicable documentation conditions are satisfied and the reviewer approves the docs as over 95% good to go.

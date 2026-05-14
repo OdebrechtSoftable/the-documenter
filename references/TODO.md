@@ -46,3 +46,6 @@ Use this checklist while applying The Documenter.
 - [ ] Check deployment runbook is outside root README.
 - [ ] Check CLAUDE only points to AGENTS.
 - [ ] Check no secrets are included.
+- [ ] Run a dedicated documentation review agent for blind spots, missing information, unsupported claims, and weak navigation.
+- [ ] Fix review findings and repeat verification until every applicable condition passes.
+- [ ] Confirm review agent approves the documentation as over 95% good to go.

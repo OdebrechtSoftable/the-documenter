@@ -1,8 +1,10 @@
 # Parallel Documentation Workflow
 
-Use this workflow when The Documenter creates or refreshes a large doc set.
+Use this workflow whenever The Documenter creates or refreshes documentation.
 
 Parallelization must improve throughput without weakening evidence quality. Do not parallelize from raw repo context alone.
+
+The goal is comprehensive documentation. Keep iterating until all applicable checks pass and a dedicated review agent approves the documentation as over 95% good to go.
 
 ## Core Principle
 
@@ -14,20 +16,9 @@ repo evidence -> module docs -> core concepts -> shared facts -> parallel derive
 
 ## When To Use
 
-Use this workflow for:
+Use this workflow for every documentation task.
 
-- large repos
-- full-stack repos
-- many modules/features
-- full doc-pack creation
-- stale docs where multiple files need refresh
-
-Do not use it for:
-
-- one narrow doc edit
-- small repos where one pass is faster
-- unclear facts that require immediate user answers
-- docs that need one tightly held product narrative
+For narrow edits, keep the source-first scan and merge/verify discipline, and scale the parallel phase down to the minimum useful width.
 
 ## Serial Phase 1: Evidence Scan
 
@@ -141,6 +132,7 @@ Assign disjoint ownership.
 | Ops writer | `docs/testing.md`, `docs/deployment.md` | shared facts plus repo command/deploy evidence | supported checks and deployment runbook |
 | API/design writer | API docs, `docs/DESIGN.md`, architecture refinements | module docs plus stack entry point refs | focused technical docs |
 | Agent-docs writer | `AGENTS.md`, `CLAUDE.md` | shared facts plus repo operational evidence | operational guide and pointer-only Claude |
+| Review agent | no file ownership | complete doc set, shared facts, verification checklist | blind spots, missing information, unsupported claims, approval status |
 
 Parallel agents must not:
 
@@ -189,6 +181,22 @@ Merge checklist:
 9. Env/config docs list names only, never values.
 10. Missing facts are omitted.
 11. No parallel writer introduced unsupported claims.
+12. Review agent findings are resolved or explicitly documented as repo-unsupported/user-unconfirmed.
+13. Review agent approves the documentation as over 95% good to go.
+
+## Review Loop
+
+After serial merge, create a dedicated review agent.
+
+The review agent must find:
+
+- blind spots in repo coverage
+- missing setup, runtime, deployment, testing, API, or domain information
+- unsupported claims or invented facts
+- places where user answers were not used to fill documentation gaps
+- weak navigation or duplicated detail across root README, docs hub, and focused docs
+
+If the review agent does not approve the documentation as over 95% good to go, the orchestrator fixes the findings, reruns the relevant checks, and sends the updated docs back for review. The loop ends only when every applicable verification condition is satisfied and the review agent explicitly approves the docs as over 95% good to go.
 
 ## Performance Tradeoff
 
@@ -209,11 +217,11 @@ Benefit:
 
 ## Scale Rules
 
-| Repo Size | Parallelism |
+| Task Size | Parallel Width |
 |---|---|
-| Small | Keep serial |
+| Small | One lightweight derived-doc writer after source docs exist |
 | Medium | Parallelize 1-2 derived-doc writers after module/core docs |
 | Large | Parallelize 3-5 derived-doc writers after module/core docs |
 | Full-stack | Split by frontend/backend only after shared concepts and module docs exist |
 
-The orchestrator remains responsible for final correctness.
+The review agent always runs after merge regardless of task size. The orchestrator remains responsible for final correctness.

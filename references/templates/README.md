@@ -24,13 +24,13 @@ See [docs/README.md](./docs/README.md) for the full documentation map.
 
 ## Tech Stack
 
-| Area | Technology |
-|---|---|
-| Runtime | |
-| Framework | |
-| Language | |
-| Package manager | |
-| Database | |
+| Area            | Technology |
+| --------------- | ---------- |
+| Runtime         |            |
+| Framework       |            |
+| Language        |            |
+| Package manager |            |
+| Database        |            |
 
 ## Architecture
 
@@ -44,21 +44,21 @@ Brief architecture summary. Link to deeper docs under `docs/` when available.
 `-- path/
 ```
 
-| Path | Purpose |
-|---|---|
-| `path/` | |
+| Path    | Purpose |
+| ------- | ------- |
+| `path/` |         |
 
 ## Local Development
 
-| Command | Purpose |
-|---|---|
-| `command` | |
+| Command   | Purpose |
+| --------- | ------- |
+| `command` |         |
 
 ## Environment Variables / Configuration
 
-| Name | Required | Purpose |
-|---|---:|---|
-| `SAFE_ENV_NAME` | Yes/No | |
+| Name            | Required | Purpose |
+| --------------- | -------: | ------- |
+| `SAFE_ENV_NAME` |   Yes/No |         |
 
 Do not include secret values.
 
@@ -85,8 +85,8 @@ Repo-backed contribution flow.
 ## Modules / Features at a Glance
 
 | Module / Feature | Purpose | Docs |
-|---|---|---|
-| Name | | |
+| ---------------- | ------- | ---- |
+| Name             |         |      |
 
 ## Contacts / Ownership
 

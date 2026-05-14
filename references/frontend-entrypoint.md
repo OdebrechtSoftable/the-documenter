@@ -71,6 +71,7 @@ Create or refresh these docs when evidence supports them:
 - `docs/DESIGN.md`: design system, user-facing terminology, layout rules, responsive behavior, accessibility.
 - `docs/testing.md`: test/lint/typecheck commands, manual smoke checks, known gaps.
 - `docs/deployment.md`: static export, preview, app store, EAS, CI/CD, or hosting flow when present.
+- `docs/code-format-patterns-style.md`: tooling config, naming conventions, folder/component skeletons, styling system rules, TS patterns, data-fetching patterns, hook/context patterns, anti-patterns, and a new-code checklist. Required for any frontend repo with non-trivial source. Every rule must cite a concrete repo path or export.
 - `docs/README.md`: docs hub and reading path.
 
 ## AGENTS.md Frontend Shape
@@ -94,6 +95,14 @@ Put operational content once in `AGENTS.md`:
 - before-editing checks
 - verification commands
 
+`AGENTS.md` Formatting Rules, Code Style Rules, and File Placement sections must each end with a pointer line to `docs/code-format-patterns-style.md`:
+
+```markdown
+See [docs/code-format-patterns-style.md](./docs/code-format-patterns-style.md) for the full code format, patterns, and style reference.
+```
+
+Keep the in-`AGENTS.md` summary terse. Full ruleset, examples, and anti-pattern tables live in `docs/code-format-patterns-style.md`.
+
 `CLAUDE.md` remains pointer-only to `AGENTS.md`.
 
 ## Verification
@@ -107,4 +116,5 @@ Before shipping frontend docs:
 5. Confirm API/auth docs from actual client/interceptor/provider files.
 6. Confirm `docs/DESIGN.md` matches existing style/theme/components.
 7. Confirm deployment docs live in `docs/deployment.md`, not root `README.md`.
-8. Confirm no secret values are documented.
+8. Confirm `docs/code-format-patterns-style.md` exists and every rule cites a real repo path/export; `AGENTS.md` Formatting / Code Style / File Placement sections point to it.
+9. Confirm no secret values are documented.
